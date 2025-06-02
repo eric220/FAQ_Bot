@@ -9,7 +9,7 @@ Clone the repository, set up the virtual environment, and install the required p
 3. pip install -r requirements.txt
 
 **Store API Keys**
-inside the config_files folder, create a config.py file with the text OPENAI_API_KEY=your_openai_api_key.
+\ninside the config_files folder, create a config.py file with the text OPENAI_API_KEY=your_openai_api_key.
 
 *Make sure to replace the placeholder your_openai_api_key with your actual key.*
 
