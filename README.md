@@ -1,4 +1,4 @@
-#FAQ Bot - Powered by Langgraph, ChromaDB, and OpenAI
+*FAQ Bot - Powered by Langgraph, ChromaDB, and OpenAI*
 
 ##Welcome to the FAQ_Bot repository! This project demonstrates how to leverage Generative AI for building a smart frequently asked questions bot using a large language model.
 
