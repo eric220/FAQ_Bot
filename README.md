@@ -4,7 +4,7 @@
 
 ##Getting Started
 Clone the repository, set up the virtual environment, and install the required packages
-1. git clone xxx.git
+1. git clone https://github.com/eric220/FAQ_Bot.git
 2. conda create -n your_environment_name python=3.11. conda activate your_environment_name
 3. pip install -r requirements.txt
 
