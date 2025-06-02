@@ -1,0 +1,79 @@
+FAQ (Please read before asking questions in the chat)
+Please read the full instructions (even if you've worked on this project before). You can log time and get paid for doing so. Note that the instructions are the same for all versions of this project. The only difference is the models that are being used.
+
+Please only use Chrome for this project. Unfortunately, there are issues with some other browsers not recognizingthe CSV files, and it may cause the models to return nothing but error messages.
+
+UPDATE (3/05/2024)
+The instructions have been updated significantly, specifically regarding editing and manually ending model turns. Please read them thoroughly. We know there are a lot of them, but you can log time and get paid for reading them. These submissions will be reviewed, and anybody found to be consistently failing to follow instructions will unfortunately be removed from the project.
+
+Minor errors are fine as you get acclimated to the instructions, but we do not expect to see blatant errors that indicate that you haven't read the instructions. Some examples are: not editing when necessary, such as when the models don't print head() and info() in the first Code Generation response of the conversation; selecting planning instruction responses that contain code/code snippets; submitting conversations in the middle of unfinished turns before the models arrive at a final answer (this does not apply to conversations that stalled/broke or hit the message limit).
+
+Please focus on multi-turn conversations with followup requests.
+
+Try to use multi-file prompts for the majority of your turns (you can use any of the four multi-file categories for your prompts)
+
+All multi-file prompts this round should be multi-tab .xlsx files. In other words, you'll only be uploading one .xlsx file with multiple tabs instead of uploading multiple files separately. You will have to create your own multi-tab files from the provided dataset. Please see these instructions about how to create multi-tab files.
+
+You can use files that others have created, but please try to create a couple of your own first.
+
+The links to the Drive folders with the multi-tab files have been added to the Project Directory section at the bottom of this panel.
+
+There is a new question regarding correcting unavoidable errors. If the model corrects an unavoidable ValueError or KeyError at any point during your conversation, please make sure to use the corresponding checkboxes.
+
+Avoid file generation prompts for now.
+
+There are several prompt subcategories that we would like you to prioritize. Try to use one of the following subcategories for around half of your turns: data cleaning (Straightforward Request); creating new column(s) (Straightforward Request); single Simple Implied Calculation (Straightforward Request) <-- Note that these are prompts that will require some kind of calculation by the models that you don't explicitly mention or state. The models will need to infer that on their own; single Complex calculation (Straightforward Request); complex Visualization/Plotting (Straightforward Request); advanced Analysis (Open-Ended Request)
+
+Please try to use at least moderately complex/involved prompts. Avoid simple plotting/data description/data retrieval/calculation prompts. In general, avoid the "Factual Request" category of prompts.
+
+Notes:
+For bug reports and comments about technical issues for this project, please use the Coding Conversations: Data Analysis and Visualization in Python - Bug Reports + Model Issues project on your dashboard. Do not post comments about bugs or technical issues in this project chat.
+
+If the "Next Message" button seems to be broken, please make sure that all of the required ratings and explanations are filled out. You will not be able to move to the next message unless they have all been answered.
+
+For any issues that cause the conversation to stall or break in any way (meaning you're unable to progress the conversation), please use the checkbox at the top of the ratings window and submit the conversation. If the submission crashes, and you're unable to submit, you can still log your time for it. (We're aware of a specific issue with the "Next Message" button and/or the "Finalize Edits" button becoming unresponsive in some instances after editing an error message.)
+
+If both models return an error response on the first turn of the conversation, just refresh the page and start over (no need to submit). If you're getting consistent error responses for both models (more than 2 in a row), do not attempt to edit the entire conversation. In these cases, just use the model failure checkbox and submit. It is likely that the models are down, so you may want to wait a few minutes before trying again.
+
+If a model gives the final answer but appends code instructions to the end, choose the other response as better.
+
+You have to select a response as better before you can edit it (even when both responses return an error message)
+
+Rating the edited response (when you edit) - A reminder that when you edit a response, you should be rating the edited response, not the original. As such, you may want to adjust the comparison rating, and you will want to consider the edited version for the separate response ratings.
+
+The message limit for these conversations is 20. Try to make sure that you'll have enough messages to get a full turn with the models before asking an additional prompt (a "full turn" means that the models give a definitive answer to the prompt, and the turn doesn't end on a code-gen message, for example).
+
+If only one message has the "There was an error querying the model. Please edit this response." error and the other does not, always choose the non-error response as better and mark the error response as "N/A" (don't actually edit the error response in this case). We only want to edit an error response when they both return an error message.
+
+Please do not select error messages as the better response. If you receive error messages from both models, and editing is not working, use the checkbox and submit the conversation. Do not try to move forward with an erroneous response.
+
+In responses where both models contain images with descriptions and insights about the generated plot image, the response with more detailed and accurate plot insights should be preferred (assuming all else is equal).
+
+Responses that end with “Sorry we couldn't finish the response at this time. Please try again later.” are not considered canned responses and are not unratable. The lone exception to this is if there is nothing else in the response (meaning literally no code/output and no other text).
+
+<Code> placeholders do not count as “showing the code to the user” when the user explicitly asks to see the code. The code should be given in the actual text response.
+
+If a response does not use print() for the last statement of its code but still shows output, that is not an error. The models that produce these responses run in Notebook/iPython environments where a print() statement is not necessary for the last line.
+
+There may be different file types in these tasks (such as .xlsx). Please use the exact file listed (for example, do not search for a .csv equivalent)
+
+If a response is cut off before providing a final answer, that should always be considered “too short” for the Verbosity rating.
+
+For the side-by-side rating of the responses, you should be running the code locally to verify that the responses are correct. (You do not have to run the code in Response A’s step-by-step section).
+
+Sometimes, the responses may omit pieces of code like loading the data into a dataframe. If possible, you should rate those responses as they are and assume that the omitted code is correct.
+
+Use your own, separate timer for tracking payment. The timer on the screen is more related to how Data Annotation assigns tasks to different users.
+
+If the prompt will result in the model having to use both files, you can mark it as multi-file (so in your case, that sounds like multi file) =)
+
+The models see the plot info via JSON. However, if you're editing/writing your own insights, you can just assume they can see everything in the plot
+
+If the prompt only relates to one file, you shouldn't mark it as "multi-file" (for followup turns). The context of the prompt matters. If the model already loaded the correct file in the first turn, and the prompt asks a follow-up about that same file, you wouldn't need to mark that as a multi-file prompt
+
+You cannot, according to the instruction document. Under the "Editing Failed Responses" heading, it reads "Note that you can only select one event tag for these edits"; letting us know that we cannot add more tags.
+
+I always just edit the coding instructions and forego the output to the user since it's not usually as important to the process. If the instructions don't mention it explicitly I believe it's ok to take liberty and do what you think makes the most sense. @Jim's approach is good too, maybe I'll try that next time.
+
+You don't have to penalize the other model for not using the `print(df.head().to_markdown(index=False, numalign="left", stralign="left"))` format. Good question!
+
