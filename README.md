@@ -26,4 +26,4 @@ streamlit run app.py
 
 **Using the Chatbot**
 
-Once launched, simply ask your questions in the text box:
+Once launched, simply ask your questions in the text box.
