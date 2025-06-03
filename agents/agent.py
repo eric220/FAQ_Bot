@@ -1,19 +1,13 @@
-from typing import Annotated, Literal, Union, Optional, Dict
+from typing import Annotated
 from typing_extensions import TypedDict
 from langgraph.graph.message import add_messages
-from langgraph.graph import StateGraph, START, END
+from langgraph.graph import StateGraph, END
 from langchain_openai import ChatOpenAI
 from langchain_core.messages.ai import AIMessage
 from config_files import config
 from db import chroma_db
 from langchain_core.tools import tool
-from langgraph.prebuilt import ToolNode, InjectedState
-from langchain_core.tools.base import InjectedToolCallId
-from langchain_core.runnables import RunnableConfig
-from langchain_core.messages.tool import ToolMessage
-from langgraph.types import Command
-import uuid
-import time
+from langgraph.prebuilt import ToolNode
 from langgraph.checkpoint.memory import MemorySaver
 from agents.tools import query_tool
 memory = MemorySaver()
@@ -37,7 +31,7 @@ class Agent:
         graph_builder.add_edge('tools', 'chatbot')
         self.graph = graph_builder.compile(checkpointer=memory)
 
-    JIMMY_BOT_INST = (
+    FAQ_BOT_INST = (
         "system",
         '''You are a helpful question answering bot. always use the get_results tool to search for the most
         likely answers. always answer in the first person. For example if the user asks your age, respond I am 21 years old.'''
@@ -56,7 +50,7 @@ class Agent:
 
     def chatbot(self, state: AgentState):
         if state["messages"]:
-            new_output = self.llm_with_tools.invoke([self.JIMMY_BOT_INST] + state["messages"])
+            new_output = self.llm_with_tools.invoke([self.FAQ_BOT_INST] + state["messages"])
         else:
             new_output = AIMessage(content='')
         
@@ -65,5 +59,5 @@ class Agent:
 
     def get_response(self, query, config_id):
         config = {"configurable": {"thread_id": config_id}}
-        return self.graph.invoke({'messages': query}, config=config )#['messages'][-1].content
+        return self.graph.invoke({'messages': query}, config=config )
     
